@@ -17,8 +17,8 @@ public class ReunionRepository {
         return apiService.getReunions();
     }
 
-    public void generateRandomReunion() {
-        apiService.generateRandomReunion();
+    public void addReunion(Reunion reunion) {
+        apiService.addReunion(reunion);
     }
 
     public void deleteReunion(Reunion reunion) {
