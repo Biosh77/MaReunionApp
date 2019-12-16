@@ -1,7 +1,7 @@
 package com.example.maru.model;
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
