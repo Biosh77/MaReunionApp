@@ -2,9 +2,11 @@ package com.example.maru.list_reunion;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 
 
@@ -13,10 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.maru.R;
+import com.example.maru.event.DeleteReunionEvent;
 import com.example.maru.model.Reunion;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
 
@@ -42,13 +48,25 @@ public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
         View view = mInflater.inflate(R.layout.cell_reunion, parent, false);
         return new ReunionViewHolder(view);
 
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ReunionViewHolder holder, int position) {
-        Reunion reunion = reunions.get(position);
-        holder.myTextView.setText(reunion.getDate()+" " + reunion.getHour()+" "+reunion.getPlace()+" "+reunion.getSubject());
+        final Reunion reunion = reunions.get(position);
+        holder.myTextView.setText(reunion.getHour()+" "+reunion.getPlace()+" "+reunion.getSubject()+" "+ reunion.getDate());
+        holder.myTextView2.setText(reunion.getMail()+"");
 
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        holder.myImageView.setColorFilter(color);
+
+        holder.deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post(new DeleteReunionEvent(reunion));
+            }
+        });
 
     }
     @Override

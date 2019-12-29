@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,28 +9,36 @@
 
     <TextView
         android:id="@+id/fragment_main_item_reunion"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1" />
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_toRightOf="@+id/color_button" />
+
 
     <TextView
         android:id="@+id/fragment_main_item_reunion2"
-        android:layout_width="0dp"
-        app:layout_constraintbottom_toBottomOf="@+id/fragment_main_item_reunion"
-        android:layout_height="50dp"
-        android:layout_weight="1" />
-
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/fragment_main_item_reunion"
+        android:layout_toRightOf="@+id/color_button"/>
 
     <ImageButton
         android:id="@+id/item_list_user_delete_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="-55dp"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_main_item_reunion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragment_main_item_reunion"
+        android:layout_toRightOf="@+id/fragment_main_item_reunion"
         android:src="@drawable/ic_trash_can_foreground"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        tools:ignore="RtlHardcoded" />
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/color_button"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_color_foreground"
+        />
+
+
+</RelativeLayout>
