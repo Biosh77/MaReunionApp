@@ -6,23 +6,16 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
-
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.example.maru.R;
 import com.example.maru.event.DeleteReunionEvent;
 import com.example.maru.model.Reunion;
-
 import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 
 public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
 
@@ -31,14 +24,10 @@ public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
     private ItemClickListener mClickListener;
 
 
-
-
-
     public ReunionAdapter(Context context, ArrayList<Reunion> reunions) {
 
         this.reunions = reunions;
         this.mInflater = LayoutInflater.from(context);
-
     }
 
 
@@ -47,8 +36,6 @@ public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
     public ReunionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.cell_reunion, parent, false);
         return new ReunionViewHolder(view);
-
-
     }
 
     @Override
@@ -75,11 +62,9 @@ public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
     }
 
 
-
     Reunion getItem(int id) {
         return reunions.get(id);
     }
-
 
     void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;

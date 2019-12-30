@@ -75,4 +75,16 @@
         android:focusable="false"
         android:clickable="false" />
 
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        />
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chipgroup"
+        />
+
 </LinearLayout>
