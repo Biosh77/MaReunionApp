@@ -2,10 +2,11 @@ package com.example.maru.model;
 
 
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class Reunion {
+public class Reunion implements Serializable {
 
     private String hour;
     private String date;
