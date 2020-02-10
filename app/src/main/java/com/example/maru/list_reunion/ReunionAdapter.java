@@ -13,7 +13,6 @@ import com.example.maru.R;
 import com.example.maru.event.DeleteReunionEvent;
 import com.example.maru.model.Reunion;
 import org.greenrobot.eventbus.EventBus;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -27,7 +26,7 @@ public class ReunionAdapter extends RecyclerView.Adapter<ReunionViewHolder> {
 
 
 
-    public ReunionAdapter(Context context, ArrayList<Reunion> reunions) {
+    public ReunionAdapter(Context context, List<Reunion> reunions) {
 
         this.reunions = reunions;
         this.mInflater = LayoutInflater.from(context);

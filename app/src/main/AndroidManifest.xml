@@ -4,7 +4,6 @@
     package="com.example.maru">
 
     <application
-        android:name=".application.ReuApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

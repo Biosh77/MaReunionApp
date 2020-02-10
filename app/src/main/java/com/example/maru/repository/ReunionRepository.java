@@ -24,6 +24,9 @@ public class ReunionRepository {
     public void deleteReunion(Reunion reunion) {
         apiService.deleteReunion(reunion);
     }
+    public List<Reunion> filterReunion(String salle, String date) {
+        return apiService.filterReunion(salle,date);
+    }
 }
 
 

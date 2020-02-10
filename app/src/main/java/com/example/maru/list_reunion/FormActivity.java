@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.maru.R;
-import com.example.maru.base.BaseActivity;
 import com.example.maru.model.Reunion;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class FormActivity extends BaseActivity {
+public class FormActivity extends AppCompatActivity {
 
 
     private EditText Hour;
@@ -194,8 +194,8 @@ public class FormActivity extends BaseActivity {
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(getApplicationContext(), ListReunionActivity.class);
-        startActivityForResult(myIntent, 0);
+        if(item.getItemId()== android.R.id.home)
+            finish();
         return true;
     }
 
@@ -208,9 +208,6 @@ public class FormActivity extends BaseActivity {
                     intent.putExtra(KEY_REUNION, new Reunion(Hour.getText().toString(), spinner.getSelectedItem().toString(), Subject.getText().toString(), getListFromChipGroup(chipgroup), Date.getText().toString()));
                     setResult(Activity.RESULT_OK, intent);
                     finish();
-                } else {
-                    Toast.makeText(FormActivity.this,
-                            "Veuillez entrer les informations", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -233,8 +230,13 @@ public class FormActivity extends BaseActivity {
             Toast.makeText(getApplicationContext(), "Veuillez rentrer la salle ", Toast.LENGTH_SHORT).show();
             return false;
         }
+        if (getListFromChipGroup(chipgroup).isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Veuillez rentrer le mail ", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         return true;
     }
+
 
     private List<String> getListFromChipGroup(ChipGroup cg) {
         List<String> emails = new ArrayList<>();

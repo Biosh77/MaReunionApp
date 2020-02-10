@@ -7,6 +7,10 @@ import java.util.List;
 
 public interface ApiService {
     List<Reunion> getReunions();
+
     void addReunion(Reunion reunion);
+
     void deleteReunion(Reunion reunion);
+
+    List<Reunion> filterReunion(String salle, String date);
 }
