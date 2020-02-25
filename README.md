@@ -15,4 +15,5 @@ J'ai donc été solicité pour développer une application permettant de gérer 
 En ce qui concerne l'utilisation de Java à la place de Kotlin pour mon application, c'est très simple, Java est plus utilisé, 
 il y a plus de développeurs succeptibles de continuer l'application et il y a plus de ressources sur internet,
 puis Comme Android lui-même est construit sur Java, il existe de nombreuses bibliothèques Java à disposition. 
-Sans oublier que Java fonctionne bien pour les applications natives et multiplateformes.
+
+Sans oublier que la migration de Java à Kotlin est possible sans avoir besoin de recréer l'application et de ce fait ne pas engendrer de coups supplémentaires , ils peuvent en effet cohabiter.
